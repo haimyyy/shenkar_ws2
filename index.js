@@ -9,22 +9,22 @@ app = express();
 var Player1={
 	"playerId":1,
 	"scoredGoals":6,
-	"month":"june"
+	"month":"June"
 };
 var Player2={
 	"playerId":2,
 	"scoredGoals":4,
-	"month":"october"
+	"month":"October"
 };
 var Player3={
 	"playerId":3,
 	"scoredGoals":3,
-	"month":"may"
+	"month":"May"
 };
 var Player4={
 	"playerId":4,
 	"scoredGoals":6,
-	"month":"may"
+	"month":"May"
 };
 g_players=[];
 g_players.push(Player1);
@@ -35,7 +35,7 @@ g_players.push(Player4);
 /******* end DB and init *********/
 
 
-app.get('/getPlareyScoredById/:playerId?', function(req, res) {
+app.get('/getPlayerScoredById/:playerId?', function(req, res) {
 	try{
 		var playerId = req.query.playerId;;
 		console.log(playerId);		
@@ -68,6 +68,8 @@ app.get('/getBestPlayerScoredInMonth/:month?', function(req, res) {
 	console.log(ans);
 	if (ans ==0) {
 		res.json({status:2,msg:"month isn't exist"});
+	}else if (ans==1) {
+			res.json({status:2,msg:"there isn't scored fot this month"});
 	}else{
 		res.json({status:1,playerId:ans.playerId,scored:ans.scoredGoals,month:ans.month})
 	}
