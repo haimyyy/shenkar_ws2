@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/haimyyy/shenkar_ws2#readme",
   "dependencies": {
-    "express": "^4.12.4"
-
+    "express": "^4.12.4",
+    "url": "^0.10.3"
   }
 }
