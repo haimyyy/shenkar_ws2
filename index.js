@@ -78,9 +78,12 @@ app.get('/getBestPlayerScoredInMonth/:month?', function(req, res) {
 		res.json({status:1,playerId:ans.playerId,scored:ans.scoredGoals,month:ans.month})
 	}
 });
-app.get('/',function(req,res){
-	res.send(200,"ok")
-})
+app.get('/', function(req,res){
+	res.end(200,"ok")
+});
+app.get('/*', function(req,res){
+	res.end(404,"error")
+});
 var port = process.env.PORT || 3000;
 app.listen(port, function() {
 	console.log("port " + port);
