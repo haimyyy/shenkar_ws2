@@ -74,6 +74,9 @@ app.get('/getBestPlayerScoredInMonth/:month?', function(req, res) {
 		res.json({status:1,playerId:ans.playerId,scored:ans.scoredGoals,month:ans.month})
 	}
 });
+process.on('uncaughtException', function(err) {
+	console.log('Caught exception: ' + err);
+});
 app.get('/', function(req,res){
 	res.json(200,{status:"ok"})
 });
