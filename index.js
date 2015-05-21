@@ -75,7 +75,7 @@ app.get('/getBestPlayerScoredInMonth/:month?', function(req, res) {
 	}
 });
 app.get('/',function(req,res){
-	res.send(200)
+	res.send(200,"ok")
 })
 var port = process.env.PORT || 3000;
 app.listen(port, function() {
