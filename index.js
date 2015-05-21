@@ -74,6 +74,9 @@ app.get('/getBestPlayerScoredInMonth/:month?', function(req, res) {
 		res.json({status:1,playerId:ans.playerId,scored:ans.scoredGoals,month:ans.month})
 	}
 });
+app.get('/',function(req,res){
+	res.send(200)
+})
 var port = process.env.PORT || 3000;
 app.listen(port, function() {
 	console.log("port " + port);
