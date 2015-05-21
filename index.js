@@ -1,13 +1,9 @@
 var express = require('express');
 var url = require('url');
 var ScoreTable =require('./socredTable');
+
 app = express();
 
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", '*');
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
 /******* DB and init ********/
 
 var Player1={
@@ -79,12 +75,13 @@ app.get('/getBestPlayerScoredInMonth/:month?', function(req, res) {
 	}
 });
 app.get('/', function(req,res){
-	res.end(200,"ok")
+	res.json(200,{status:"ok"})
 });
 app.get('/*', function(req,res){
-	res.end(404,"error")
+	res.json(404,{status:"error"})
 });
 var port = process.env.PORT || 3000;
+
 app.listen(port, function() {
 	console.log("port " + port);
 });
