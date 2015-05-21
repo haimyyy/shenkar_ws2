@@ -11,12 +11,11 @@
     "type": "git",
     "url": "https://github.com/haimyyy/shenkar_ws2.git"
   },
-  "author": "haim yaakov",
+  "author": "haim_yaakov",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/haimyyy/shenkar_ws2/issues"
   },
-  "homepage": "https://github.com/haimyyy/shenkar_ws2#readme",
   "dependencies": {
     "express": "^4.12.4",
     "url": "^0.10.3"
