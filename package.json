@@ -5,13 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"node index.js"
+    "start": "node index.js"
   },
   "author": "haim_yaakov",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.13.1",
     "express": "^4.12.4",
     "url": "^0.10.3"
   }
 }
-

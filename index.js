@@ -1,7 +1,7 @@
 var express = require('express');
 var url = require('url');
 var ScoreTable =require('./socredTable');
-
+var bodyParser = require('body-parser');
 app = express();
 
 /******* DB and init ********/
@@ -36,6 +36,9 @@ g_players.push(Player2);
 g_players.push(Player3);
 g_players.push(Player4);
 
+app.use(bodyParser());
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
 /******* end DB and init *********/
 app.use(function(req,res,next){
 	res.header("Access-Control-Allow-Origin", "*");
