@@ -96,6 +96,7 @@ app.get('/', function(req,res){
 app.get('/*', function(req,res){
 	res.json({status:"error"})
 });
+
 var port = process.env.PORT || 3000;
 
 app.listen(port, function() {
