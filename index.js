@@ -91,10 +91,10 @@ process.on('uncaughtException', function(err) {
 	console.log('Caught exception: ' , err);
 });
 app.get('/', function(req,res){
-	res.json(200,{status:"ok"})
+	res.json({status:"ok"})
 });
 app.get('/*', function(req,res){
-	res.json(404,{status:"error"})
+	res.json({status:"error"})
 });
 var port = process.env.PORT || 3000;
 
