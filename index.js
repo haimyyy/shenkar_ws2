@@ -37,11 +37,14 @@ g_players.push(Player3);
 g_players.push(Player4);
 
 /******* end DB and init *********/
-
+app.use(function(req,res,next){
+	res.header("Access-Control-Allow-Origin", "*");
+	res.header("Access-Control-Allow-Headers", "Origin, X-requested-With, Content-Type, Accept");
+	next();
+})
 
 app.get('/getPlayerScoredById/:playerId?', function(req, res) {
-		res.header("Access-Control-Allow-Origin", "*");
-	res.header("Access-Control-Allow-Headers", "Origin, X-requested-With, Content-Type, Accept");
+		
 	try{
 		var playerId = req.query.playerId;;
 		console.log(playerId);		
@@ -60,13 +63,9 @@ app.get('/getPlayerScoredById/:playerId?', function(req, res) {
 }); 
 
 app.get('/getAllGoalScored', function(req, res) {
-	res.header("Access-Control-Allow-Origin", "*");
-	res.header("Access-Control-Allow-Headers", "Origin, X-requested-With, Content-Type, Accept");
 	res.json(g_players);
 });
 app.get('/getBestPlayerScoredInMonth/:month?', function(req, res) {
-	res.header("Access-Control-Allow-Origin", "*");
-	res.header("Access-Control-Allow-Headers", "Origin, X-requested-With, Content-Type, Accept");	
 	try{
 		var month = req.query.month;;
 		console.log(month);		
@@ -86,7 +85,7 @@ app.get('/getBestPlayerScoredInMonth/:month?', function(req, res) {
 	}
 });
 process.on('uncaughtException', function(err) {
-	console.log('Caught exception: ' + err);
+	console.log('Caught exception: ' , err);
 });
 app.get('/', function(req,res){
 	res.json(200,{status:"ok"})

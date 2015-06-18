@@ -7,15 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start":"node index.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/haimyyy/shenkar_ws2.git"
-  },
   "author": "haim_yaakov",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/haimyyy/shenkar_ws2/issues"
-  },
   "dependencies": {
     "express": "^4.12.4",
     "url": "^0.10.3"
